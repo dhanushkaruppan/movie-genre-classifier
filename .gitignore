@@ -1,0 +1,17 @@
+# Datasets and models
+Movie_Posters_IMDb/
+Movie_Posters_IMDb.zip
+Movie_Posters/
+movie_poster_v2/
+*.keras
+*.h5
+
+# API Keys and Secrets
+*.json
+auth_output.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*venv*/
+.env
