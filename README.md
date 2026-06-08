@@ -19,13 +19,13 @@ This project leverages a transfer-learning approach using **EfficientNetV2S** co
 
 ```text
 ├── notebooks/
-│   ├── 01_model_training.ipynb     # Full training pipeline (EfficientNetV2S)
-│   └── 02_model_prediction.ipynb   # Prediction and evaluation with TTA
+│   ├── 01_train.ipynb              # Full training pipeline (EfficientNetV2S)
+│   └── 02_predict.ipynb            # Prediction and evaluation with TTA
 ├── scripts/
-│   └── download_imdb_posters_selenium.py # IMDb scraper for dataset collection
+│   └── scrape_imdb.py              # IMDb scraper for dataset collection
 ├── tests/
-│   ├── auth_test.py                # Tests for authentication
-│   └── only_upload.py              # Upload tests
+│   ├── test_auth.py                # Tests for authentication
+│   └── test_upload.py              # Upload tests
 ├── requirements.txt                # Python dependencies
 └── README.md                       # Project documentation
 ```
@@ -51,12 +51,12 @@ pip install -r requirements.txt
 ### 1. Collect Data (Optional)
 If you want to build your own dataset from scratch, run the scraper:
 ```bash
-python scripts/download_imdb_posters_selenium.py
+python scripts/scrape_imdb.py
 ```
 This will automatically download posters into a `Movie_Posters_IMDb` directory.
 
 ### 2. Train the Model
-Open `notebooks/01_model_training.ipynb` in Google Colab or Jupyter Notebook.
+Open `notebooks/01_train.ipynb` in Google Colab or Jupyter Notebook.
 The notebook will guide you through:
 1. Loading and preprocessing the dataset
 2. Training the custom head
@@ -64,7 +64,7 @@ The notebook will guide you through:
 4. Generating Grad-CAM heatmaps
 
 ### 3. Predict on New Posters
-Open `notebooks/02_model_prediction.ipynb` to evaluate the model on the test set, or use the interactive prediction cell with **Test-Time Augmentation (TTA)** to test the model on your own uploaded images.
+Open `notebooks/02_predict.ipynb` to evaluate the model on the test set, or use the interactive prediction cell with **Test-Time Augmentation (TTA)** to test the model on your own uploaded images.
 
 ## 📈 Performance
 - **Metrics Evaluated:** Accuracy, Top-3 Accuracy, Loss.
